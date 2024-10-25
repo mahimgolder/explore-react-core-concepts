@@ -3,12 +3,37 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import TodoList from './Todo'
+import Actor from './Actor'
+import Singer from './Singer'
 
 function App() {
+
+const actors= ['sakib', 'shoriful Raz','jashim', 'rubel','Salman Shah' ];
+
+const singers=[
+  { id: 1, name: 'Dr. Mahfuzur Rahman', age: 68},
+  {id: 2, name: 'Eva Rahman', age: 34},
+  {id: 3, name: 'Pritom', age: 20}
+
+]
+
+
+
   return (
     <>
       <h1>Mahim Golder</h1>
-      <TodoList
+      
+      {
+        singers.map(singer => <Singer props={singer}></Singer> )
+      }
+
+
+      <Actor name={'bappa raz'}></Actor>
+      {
+        actors.map(actor => <Actor name= {actor}></Actor>)
+      }
+
+      {/* <TodoList
        task="Learn react"
        isDone={true}  ></TodoList>
 
@@ -18,9 +43,9 @@ function App() {
 
       <TodoList
        task="Try jsx"
-       inDone={true} ></TodoList>
+       inDone={true} ></TodoList> */}
 
-       
+
       {/* <Device name='Laptop' price='55'></Device>
       <Device name='Watch' price='3'></Device>
       <Device name='Mobile' price='17'></Device>
